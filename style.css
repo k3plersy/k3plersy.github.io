@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: "Courier New", monospace;
+    color: #c9d1d9;
+    background: #0d1117;
+    overflow-x: hidden;
+}
+
+/* MATRIX CANVAS */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* MAIN CONTAINER */
+.container {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* PROFILE CARD */
+.card {
+    background-color: rgba(22, 27, 34, 0.9);
+    padding: 40px;
+    width: 320px;
+    margin: 0 auto 60px auto;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 170, 0.2);
+    box-shadow: 0 0 25px rgba(0, 255, 170, 0.2);
+}
+
+.profile {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid #00ffaa;
+}
+
+h1 {
+    color: #00ffaa;
+}
+
+.subtitle {
+    color: #8b949e;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: block;
+    text-decoration: none;
+    background: transparent;
+    color: #00ffaa;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #00ffaa;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00ffaa;
+    color: #0d1117;
+    box-shadow: 0 0 15px #00ffaa;
+}
+
+/* PROJECTS SECTION */
+.projects h2 {
+    color: #00ffaa;
+    margin-bottom: 30px;
+}
+
+.project-card {
+    background-color: rgba(22, 27, 34, 0.9);
+    width: 320px;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 170, 0.15);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
+}
