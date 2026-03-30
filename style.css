@@ -18,6 +18,7 @@ canvas {
 .container {
     padding: 50px 20px;
     text-align: center;
+    animation: fadeIn 1s ease-in;
 }
 
 /* PROFILE CARD */
@@ -48,21 +49,39 @@ h1 {
 }
 
 .btn {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     background: transparent;
     color: #00ffaa;
-    padding: 12px;
-    margin: 10px 0;
+    padding: 12px 20px;
+    margin: 10px 5px;
     border: 1px solid #00ffaa;
     border-radius: 6px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn:hover {
-    background: #00ffaa;
+    background: linear-gradient(45deg, #00ffaa, #00cc88);
     color: #0d1117;
-    box-shadow: 0 0 15px #00ffaa;
+    box-shadow: 0 0 20px #00ffaa, 0 0 40px #00ffaa;
+    transform: translateY(-2px);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 /* PROJECTS SECTION */
@@ -84,4 +103,14 @@ h1 {
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .card, .project-card { width: 90%; }
+    .btn { display: block; margin: 10px auto; }
 }
