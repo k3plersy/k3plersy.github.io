@@ -1,51 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Tudor Pop</title>
-    <link rel="icon" href="profile.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>CS Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- MATRIX CANVAS -->
-    <canvas id="matrix"></canvas>
+<canvas id="matrix"></canvas>
 
-    <div class="container">
+<div class="container">
 
-        <div class="left">
-            <a href="https://steamcommunity.com/profiles/76561199403341317/" target="_blank"><img src="profile.jpg" alt="Profile Picture" class="profile"></a>
-            <p class="bio">CS Enthusiast</p>
-            <a href="https://github.com/k3plersy" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/tudor-pop-k3plersy" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://www.instagram.com/_tudorpop/" target="_blank" class="btn"><i class="fab fa-instagram"></i> Instagram</a>
+    <!-- LEFT PANEL -->
+    <div class="left box">
+        <img src="profile.jpg" class="profile">
+
+        <h1 class="name">Tudor Pop</h1>
+        <h2>CS Enthusiast</h2>
+
+        <div class="socials">
+            <a href="https://github.com/k3plersy" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/k3plersy" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/k3plersy" target="_blank">Instagram</a>
         </div>
+    </div>
 
-        <!-- PROJECTS SECTION -->
-        <div class="right">
-            <h2 class="animated-border">Projects<svg class="border-beam" viewBox="0 0 100 100" preserveAspectRatio="none"><rect class="beam1" x="0" y="0" width="100" height="100" fill="none" stroke="#00ffaa" stroke-width="2" stroke-dasharray="400" stroke-dashoffset="400"/><rect class="beam2" x="3" y="3" width="94" height="94" fill="none" stroke="#00cc88" stroke-width="2" stroke-dasharray="376" stroke-dashoffset="376"/></svg></h2>
+    <!-- RIGHT PANEL -->
+    <div class="right box">
+        <h2 class="section-title">Projects</h2>
 
-            <div class="project-card animated-border">
-                <h3><a href="https://github.com/k3plersy/AT_TP_cpp" target="_blank">Atestat Informatica</a></h3>
-                <p>Proiect - Algoritmul lui Kruskal</p>
-                <svg class="border-beam" viewBox="0 0 100 100" preserveAspectRatio="none"><rect class="beam1" x="0" y="0" width="100" height="100" fill="none" stroke="#00ffaa" stroke-width="2" stroke-dasharray="400" stroke-dashoffset="400"/><rect class="beam2" x="3" y="3" width="94" height="94" fill="none" stroke="#00cc88" stroke-width="2" stroke-dasharray="376" stroke-dashoffset="376"/></svg>
-            </div>
-
-            <div class="project-card animated-border">
-                <h3>---</h3>
-                <p>Soon..</p>
-                <svg class="border-beam" viewBox="0 0 100 100" preserveAspectRatio="none"><rect class="beam1" x="0" y="0" width="100" height="100" fill="none" stroke="#00ffaa" stroke-width="2" stroke-dasharray="400" stroke-dashoffset="400"/><rect class="beam2" x="3" y="3" width="94" height="94" fill="none" stroke="#00cc88" stroke-width="2" stroke-dasharray="376" stroke-dashoffset="376"/></svg>
-            </div>
-
-            <div class="project-card animated-border">
-                <h3>---</h3>
-                <p>Soon..</p>
-                <svg class="border-beam" viewBox="0 0 100 100" preserveAspectRatio="none"><rect class="beam1" x="0" y="0" width="100" height="100" fill="none" stroke="#00ffaa" stroke-width="2" stroke-dasharray="400" stroke-dashoffset="400"/><rect class="beam2" x="3" y="3" width="94" height="94" fill="none" stroke="#00cc88" stroke-width="2" stroke-dasharray="376" stroke-dashoffset="376"/></svg>
-            </div>
-
+        <div class="project">
+            <a href="https://github.com/k3plersy/AT_TP_cpp" target="_blank">
+                AT_TP_cpp
+            </a>
         </div>
 
     </div>
+
+</div>
 
 <script src="matrix.js"></script>
 </body>

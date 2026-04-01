@@ -1,9 +1,9 @@
 body {
     margin: 0;
-    font-family: "Courier New", monospace;
-    color: #c9d1d9;
+    font-family: 'Fira Code', monospace;
     background: #0d1117;
-    overflow-x: hidden;
+    color: #c9d1d9;
+    overflow: hidden;
 }
 
 /* MATRIX CANVAS */
@@ -14,169 +14,89 @@ canvas {
     z-index: -1;
 }
 
-/* MAIN CONTAINER */
+/* LAYOUT */
 .container {
-    padding: 50px 20px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    height: 100vh;
     gap: 40px;
-    animation: fadeIn 1s ease-in;
 }
 
-/* LEFT SECTION */
-.left {
-    background-color: rgba(22, 27, 34, 0.9);
-    padding: 40px;
-    width: 350px;
+/* BOX BASE */
+.box {
+    background: rgba(13, 17, 23, 0.85);
+    border: 1px solid #30363d;
     border-radius: 12px;
-    position: relative;
-    overflow: hidden;
+    padding: 30px;
+    backdrop-filter: blur(6px);
+    width: 300px;
 }
 
-.left::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-}
-
-.left:hover::before {
-    left: 100%;
-}
-
-@keyframes glow {
-    0% { box-shadow: 0 0 10px #00ffaa; }
-    50% { box-shadow: 0 0 30px #00ffaa, 0 0 40px #00ffaa; }
-    100% { box-shadow: 0 0 10px #00ffaa; }
-}
-
+/* LEFT */
 .profile {
-    width: 150px;
+    width: 120px;
     border-radius: 50%;
-    margin-bottom: 20px;
-    border: 2px solid #00ffaa;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 15px;
 }
 
-.bio {
-    color: #8b949e;
+.left h2 {
     text-align: center;
-    margin-bottom: 25px;
-    font-size: 18px;
 }
 
-.btn {
-    display: inline-block;
+/* SOCIALS */
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.socials a {
     text-decoration: none;
-    background: transparent;
-    color: #00ffaa;
-    padding: 12px 20px;
-    margin: 10px 5px;
-    border: 1px solid #00ffaa;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn:hover {
-    background: linear-gradient(45deg, #00ffaa, #00cc88);
-    color: #0d1117;
-    box-shadow: 0 0 20px #00ffaa, 0 0 40px #00ffaa;
-    transform: translateY(-2px);
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-}
-
-.btn:hover::before {
-    left: 100%;
-}
-
-/* RIGHT SECTION */
-.right h2 {
-    color: #00ffaa;
-    margin-bottom: 30px;
-    background-color: rgba(22, 27, 34, 0.9);
-    padding: 15px 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 255, 170, 0.15);
+    color: #00ff9f;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.project-card {
-    background-color: rgba(22, 27, 34, 0.9);
-    width: 320px;
-    margin: 15px 0;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 255, 170, 0.15);
     transition: 0.3s;
-    position: relative;
-    overflow: hidden;
 }
 
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
+.socials a:hover {
+    text-shadow: 0 0 8px #00ff9f;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* RIGHT */
+.section-title {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
 }
 
-.animated-border {
-    position: relative;
+/* PROJECT */
+.project a {
+    color: #58a6ff;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.border-beam {
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    pointer-events: none;
+.project a:hover {
+    text-shadow: 0 0 8px #58a6ff;
 }
 
-.beam1 {
-    animation: move-beam 4s linear infinite;
+.name {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 22px;
+    color: #00ff9f;
+    letter-spacing: 1px;
 }
 
-.beam2 {
-    animation: move-beam 4s linear infinite 2s;
+.name::after {
+    content: "|";
+    margin-left: 5px;
+    animation: blink 1s infinite;
 }
 
-@keyframes move-beam {
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-    .left, .project-card { width: 90%; }
-    .btn { display: block; margin: 10px auto; }
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
 }
