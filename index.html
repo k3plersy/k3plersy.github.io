@@ -40,5 +40,25 @@
 </div>
 
 <script src="matrix.js"></script>
+
+<script>
+const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+function randomChar() {
+    return chars[Math.floor(Math.random() * chars.length)];
+}
+
+function generateGibberish(length) {
+    let result = "";
+    for (let i = 0; i < length; i++) {
+        result += randomChar();
+    }
+    return result;
+}
+
+setInterval(() => {
+    document.title = generateGibberish(12);
+}, 200);
+</script>
 </body>
 </html>
