@@ -18,8 +18,9 @@ canvas {
 .container {
     padding: 50px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
+    gap: 80px;
     animation: fadeIn 1s ease-in;
 }
 
@@ -31,25 +32,13 @@ canvas {
     border-radius: 12px;
     position: relative;
     overflow: hidden;
+    animation: glow 2s ease-in-out infinite;
 }
 
-.left::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #00ffaa, transparent, #00ffaa, transparent, #00ffaa);
-    background-size: 400% 400%;
-    animation: borderMove 3s linear infinite;
-    border-radius: 14px;
-    z-index: -1;
-}
-
-@keyframes borderMove {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 400% 400%; }
+@keyframes glow {
+    0% { box-shadow: 0 0 10px #00ffaa; }
+    50% { box-shadow: 0 0 30px #00ffaa, 0 0 40px #00ffaa; }
+    100% { box-shadow: 0 0 10px #00ffaa; }
 }
 
 .profile {
@@ -109,6 +98,11 @@ canvas {
 .right h2 {
     color: #00ffaa;
     margin-bottom: 30px;
+    background-color: rgba(22, 27, 34, 0.9);
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 170, 0.15);
+    text-align: center;
 }
 
 .project-card {
@@ -136,6 +130,7 @@ canvas {
     .container {
         flex-direction: column;
         align-items: center;
+        gap: 40px;
     }
     .left, .project-card { width: 90%; }
     .btn { display: block; margin: 10px auto; }
