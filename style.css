@@ -17,35 +17,56 @@ canvas {
 /* MAIN CONTAINER */
 .container {
     padding: 50px 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     animation: fadeIn 1s ease-in;
 }
 
-/* PROFILE CARD */
-.card {
+/* LEFT SECTION */
+.left {
     background-color: rgba(22, 27, 34, 0.9);
     padding: 40px;
-    width: 320px;
-    margin: 0 auto 60px auto;
+    width: 350px;
     border-radius: 12px;
-    border: 1px solid rgba(0, 255, 170, 0.2);
-    box-shadow: 0 0 25px rgba(0, 255, 170, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.left::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ffaa, transparent, #00ffaa, transparent, #00ffaa);
+    background-size: 400% 400%;
+    animation: borderMove 3s linear infinite;
+    border-radius: 14px;
+    z-index: -1;
+}
+
+@keyframes borderMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 400% 400%; }
 }
 
 .profile {
-    width: 120px;
+    width: 150px;
     border-radius: 50%;
     margin-bottom: 20px;
     border: 2px solid #00ffaa;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-h1 {
-    color: #00ffaa;
-}
-
-.subtitle {
+.bio {
     color: #8b949e;
+    text-align: center;
     margin-bottom: 25px;
+    font-size: 18px;
 }
 
 .btn {
@@ -84,8 +105,8 @@ h1 {
     left: 100%;
 }
 
-/* PROJECTS SECTION */
-.projects h2 {
+/* RIGHT SECTION */
+.right h2 {
     color: #00ffaa;
     margin-bottom: 30px;
 }
@@ -93,11 +114,12 @@ h1 {
 .project-card {
     background-color: rgba(22, 27, 34, 0.9);
     width: 320px;
-    margin: 15px auto;
+    margin: 15px 0;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid rgba(0, 255, 170, 0.15);
     transition: 0.3s;
+}
 }
 
 .project-card:hover {
@@ -111,6 +133,10 @@ h1 {
 }
 
 @media (max-width: 768px) {
-    .card, .project-card { width: 90%; }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left, .project-card { width: 90%; }
     .btn { display: block; margin: 10px auto; }
 }
