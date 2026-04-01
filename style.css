@@ -32,7 +32,6 @@ canvas {
     border-radius: 12px;
     position: relative;
     overflow: hidden;
-    animation: glow 2s ease-in-out infinite;
 }
 
 .left::before {
